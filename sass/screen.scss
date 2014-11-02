@@ -69,9 +69,9 @@ section {
 	overflow: hidden;
 	background-color: #fff;
 	padding: 1.5%;
-	-webkit-box-shadow: 0px 0px 5px 0px rgba(102,102,102,1);
-	-moz-box-shadow: 0px 0px 5px 0px rgba(102,102,102,1);
-	box-shadow: 0px 0px 5px 0px rgba(102,102,102,1);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(217, 217, 217, 0.9);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(217, 217, 217, 0.9);
+	box-shadow: 0px 0px 5px 0px rgba(217, 217, 217, 0.9);
 	h1 {
 		font-size: 150%;
 		font-weight: 400;
@@ -157,9 +157,9 @@ section {
 	width: 100%; 
 	margin: 0 auto; 
 	-webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;	
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;	
 }
  
 #filters {
@@ -168,22 +168,22 @@ section {
 	list-style:none;
 }
 
-	#filters li {
-		float:left;
-	}
-	
-	#filters li span {
-		display: block;
-		padding:5px 20px;		
-		text-decoration:none;
-		color:#666;
-		cursor: pointer;
-	}
-	
-	#filters li span.active {
-		background: #e95a44;
-		color:#fff;
-	}
+#filters li {
+	float:left;
+}
+
+#filters li span {
+	display: block;
+	padding:5px 20px;		
+	text-decoration:none;
+	color:#666;
+	cursor: pointer;
+}
+
+#filters li span.active {
+	background: #e95a44;
+	color:#fff;
+}
  
 
  
@@ -191,60 +191,73 @@ section {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-o-box-sizing: border-box;
-	width:25%;
-	//margin:1%;
+	width:33.333%;
 	display:none;
 	float:left;
 	overflow:hidden;
 }
 
-	.portfolio-wrapper {
-		overflow:hidden;
-		position: relative !important;
-		background: #666;
-		cursor:pointer;
-	}
-
-	.portfolio img {
+.portfolio-wrapper {
+	overflow:hidden;
+	position: relative;
+	background: #000;
+	cursor:pointer;
+	img {
 		max-width:100%;
+		max-height: 100%;
 		position: relative;
+		display: block;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(1.12);
+		transform: scale(1.12);
+		&:hover {
+			opacity: 0.3;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
 	}
-	
-	.portfolio .label {
+	.label {
 		position: absolute;
 		width: 100%;
-		height: 50px;
-		bottom: -50px;
-	}
-
-		.portfolio .label-bg {
-			background: rgba(255, 255, 255, 1);
+		display: block;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		&:hover {
+			opacity: 1;
+		}
+		&:before {
+			position: absolute;
+			top: 30px;
+			right: 30px;
+			bottom: 30px;
+			left: 30px;
+			content: '';
+			opacity: 0;
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;			
+		}
+		.label-text {
+			color:#666;
+			z-index:500;
+			padding:5px 8px;
+		}
+		.label-bg {
+			background: rgba(255, 255, 255, 0.5);
 			width: 100%;
 			height:100%;
 			position: absolute;
 			top:0;
 			left:0;
 		}
-	
-		.portfolio .label-text {
-			color:#666;
-			background-color: #fff;
-			position: relative;
-			z-index:500;
-			padding:5px 8px;
+		.text-category {
+			display: block;
+			font-size: 80%;
+			font-weight: 300;
+			padding: 1.25% 0;
 		}
-			
-			.portfolio .text-category {
-				display: block;
-				font-size: 80%;
-				font-weight: 300;
-				padding: 1.25% 0;
-			}
-	
-	
-	
-
-
+	}
+}
 
 /* #Tablet (Portrait) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
